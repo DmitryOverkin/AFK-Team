@@ -7,6 +7,7 @@
 
 html {
   background-color: #1a191a;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -58,6 +59,7 @@ header {
 .container {
   max-width: 1280px;
   margin: auto;
+  padding: 0 30px;
 }
 
 .header-content {
@@ -114,15 +116,57 @@ header {
 /* Always block */
 
 .main-block-text {
-    max-width: 690px;
-    width: 100%;
-    height: fit-content;
-    
+  max-width: 690px;
+  width: 100%;
+  height: fit-content;
 }
 
 .always-block-title {
-    font-size: 80px;
-    padding-top: 30%;
+  font-size: 80px;
+  padding-top: 30%;
 }
 
+/* Our-Team block */
 
+#our-team {
+  /* height: 980px; */
+}
+
+.our-team-content {
+  padding-top: 150px;
+  padding-bottom: 70px;
+}
+.orange {
+  color: #ff6333;
+}
+
+.our-team-title {
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.our-team-cards{
+  width: 925px;
+  height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 85px;
+}
+
+.foto{
+  margin-bottom: 16px;
+}
+
+.card-title{
+  margin-bottom: 16px;
+  color: #AAAAAA;
+}
+
+.card-text{
+  line-height: 25px;
+  color: #6B7280;
+}
