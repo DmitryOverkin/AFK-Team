@@ -22,7 +22,7 @@ body {
 
 .bg-pic {
   position: absolute;
-  z-index: -2;
+  z-index: -10;
   height: 100%;
   width: 100%;
 }
@@ -41,7 +41,7 @@ body {
   display: flex;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: -9;
   clip-path: polygon(0 0, 100% 0, 100% 080%, 0 100%);
 }
 
@@ -49,6 +49,7 @@ header {
   padding: 30px 40px;
   position: fixed;
   width: 100vw;
+  z-index: 10;
 }
 
 .header-container {
@@ -175,15 +176,15 @@ header {
   color: #0e2d82;
 }
 
-.yellow{
-  color: #FCC028;
+.yellow {
+  color: #fcc028;
 }
 
-#sopin{
-  padding:150px 0;
+#sopin {
+  padding: 150px 0;
 }
 
-.sopin-content-left-side{
+.sopin-content-left-side {
   margin-right: 180px;
 }
 
@@ -201,23 +202,24 @@ header {
   padding-bottom: 5px;
 }
 
-.sopin-content-left-side-images{
+.sopin-content-left-side-images {
   margin-left: 50px;
   position: relative;
 }
 
-.sopin-image{
+.sopin-image {
   max-width: 535px;
   width: 100%;
+  min-width: 300px;
   height: auto;
   object-fit: cover;
 }
 
-.bg-dots{
+.bg-dots {
   position: absolute;
   top: -28px;
   left: -50px;
-  z-index: -1;
+  z-index: -2;
   max-width: 150px;
   width: 100%;
   height: auto;
@@ -225,21 +227,21 @@ header {
 
 /* right side */
 
-.sopin-content-right-side-text{
+.sopin-content-right-side-text {
   margin-bottom: 170px;
 }
 
-.right-side-text-title{
+.right-side-text-title {
   font-size: 50px;
   margin-bottom: 15px;
 }
-.right-side-text-second-title{
+.right-side-text-second-title {
   font-size: 30px;
   font-weight: 400;
   margin-bottom: 20px;
 }
 
-.right-side-text-paragraph{
+.right-side-text-paragraph {
   width: 100%;
   max-width: 845px;
   height: auto;
@@ -247,28 +249,150 @@ header {
   font-weight: 300;
 }
 
-.sopin-content-right-achievements{
+.sopin-content-right-achievements {
   display: flex;
   gap: 15px;
 }
 
-.achievement{
+.achievement {
   display: flex;
+  margin-right: 15px;
 }
 
-.achievement-img{
+.achievement-img {
   margin-right: 15px;
 }
 
 .achievement-img > img {
   max-width: 95px;
   width: 100%;
+  min-width: 70px;
   height: auto;
 }
 
-.achievement-text{
+.achievement-text {
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding-top: 15px;
+}
+
+/* ================================== Overkin Block ==================================*/
+
+/* progressbar */
+
+.progress-container{
+  text-align: center;
+}
+
+.circle-progress{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: conic-gradient(#ff6333, 3.6deg, #928A97 0deg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-progress::before{
+  content: '';
+  position: absolute;
+  height:55px;
+  width: 55px;
+  background-color: #1A191A;
+  border-radius: 50%;
+}
+
+.progress-value{
+  position: relative;
+  color: #928A97;
+}
+
+.skill-text{
+  color: #ff6333;
+  display: block;
+  padding-top: 15px;
+}
+
+/* endprogressbar */
+
+#overkin {
+  padding: 150px 0;
+}
+
+.overkin-content {
+  display: flex;
+}
+
+/* left side */
+
+.overkin-content-left-side-text {
+  margin-bottom: 100px;
+}
+
+.left-side-text-title {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.left-side-text-second-title {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.left-side-text-paragraph {
+  width: 100%;
+  max-width: 845px;
+  height: auto;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.overkin-left-side-skills {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  row-gap: 30px;
+}
+
+
+/* right side */
+.overkin-content-right-side {
+  margin-left: 180px;
+}
+
+.overkin-content-right-side-title {
+  font-size: 33px;
+  font-weight: 300;
+  color: #aaaaaa;
+  padding-bottom: 5px;
+}
+
+.overkin-content-right-side-images {
+  margin-right: 50px;
+  position: relative;
+}
+
+.overkin-image {
+  max-width: 535px;
+  width: 100%;
+  min-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+.bg-dots-overkin {
+  position: absolute;
+  top: -28px;
+  right: -50px;
+  z-index: -1;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
 }
