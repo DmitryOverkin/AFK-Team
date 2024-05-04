@@ -76,7 +76,7 @@ for (let i = 0; i < skills.length; i++) {
     progressValue.textContent = `${progressStartValue}%`;
     circleProgress.style.background = `conic-gradient(#ff6333 ${progressStartValue * 3.6}deg, #928A97 0deg)`;
 
-    if (progressStartValue == progressEndValue) {
+    if (progressStartValue === progressEndValue) {
       clearInterval(progress);
     }
   }, speed);
@@ -96,7 +96,7 @@ for (let i = 0; i < skills.length; i++) {
         progressValue.textContent = `${progressStartValue}%`;
         circleProgress.style.background = `conic-gradient(#ff6333 ${progressStartValue * 3.6}deg, #928A97 0deg)`;
 
-        if (progressStartValue == progressEndValue) {
+        if (progressStartValue === progressEndValue) {
           clearInterval(progress);
         }
       }, speed);
