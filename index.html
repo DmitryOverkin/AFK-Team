@@ -10,12 +10,12 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/buttons.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/buttons.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>AFK Team</title>
 
-    <script src="js/main.js" defer></script>
-    <script src="js/h1-typing-text.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/h1-typing-text.js" defer></script>
   </head>
   <body>
     <div id="main-block">
@@ -43,7 +43,13 @@
                 </ul>
               </nav>
             </div>
-            <button class="signIn-btn">
+            <input id="checkbox" type="checkbox">
+            <label class="toggle" for="checkbox">
+                <div id="bar1" class="bars"></div>
+                <div id="bar2" class="bars"></div>
+                <div id="bar3" class="bars"></div>
+            </label>
+            <button class="signIn-btn login-btn">
               <span>Войти</span>
             </button>
           </div>
@@ -58,6 +64,9 @@
           <div class="main-block-text">
             <h1 class="always-block-title" id="typing-h1"></h1>
           </div>
+          <button class="signIn-btn always-login-btn">
+            <span>Войти</span>
+          </button>
         </div>
       </section>
     </div>
@@ -280,6 +289,50 @@
             </button>
           </form>
         </div>
+      </div>
+    </section>
+    <section id="footer">
+      <div class="container">
+        <footer class="footer">
+          <div class="footer-content">
+            <div class="foter-afk-team">
+              <div class="header-logo">
+                <a href="#">
+                  <img
+                    src="images/Logo.svg"
+                    alt="Логотип  компании AFK Team"
+                    class="logo-img"
+                  />
+                </a>
+              </div>
+              <div class="software-team">Команда разработчкиков</div>
+            </div>
+            <div class="footer-menu">
+              <nav class="footer-nav">
+                <ul class="footer-menu-items">
+                  <li class="footer-menu-item"><a href="#our-team">Команда</a></li>
+                  <li class="footer-menu-item"><a href="#sopin">Менеджер</a></li>
+                  <li class="footer-menu-item"><a href="#overkin">Инженер</a></li>
+                  <li class="footer-menu-item"><a href="#">Тестировщики</a></li>
+                  <li class="footer-menu-item"><a href="#">Чат</a></li>
+                  <li class="footer-menu-item"><a href="#talk">Связаться</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="socials-media">
+              <div class="telegram">
+                <a href="https://t.me/knowName_21" target="_blank"><img src="images/svg/telegram.svg" alt="telegram picture"></a>
+              </div>
+              <div class="vk">
+                <a href="https://vk.com/know_name21" target="_blank"><img src="images/svg/vk.svg" alt="telegram picture"></a>
+              </div>
+              <div class="github">
+                <a href="https://github.com/DmitryOverkin" target="_blank"><img src="images/svg/github.svg" alt="telegram picture"></a>
+              </div>
+            </div>
+            <p class="afk-team-rights">© Afk team Digital Studio. Все права защищены, 2024</p>
+          </div>
+        </footer>
       </div>
     </section>
   </body>
