@@ -1,23 +1,62 @@
-// import {loginForm} from ''
+const express = require("express");
+const cors = require("cors");
+const nodemailer = require("nodemailer");
 
-const express = require('express')
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
+app.use(express.json());
+app.use(cors());
 
-///views/login.html
+app.use("/js", express.static(`${__dirname}/js`));
+app.use("/css", express.static(`${__dirname}/css`));
+app.use("/images", express.static(__dirname + "/static/images"));
 
-app.use('/js', express.static(`${__dirname}/js`));
-app.use('/css', express.static(`${__dirname}/css`));
-app.use('/images', express.static(__dirname + '/static/images'));
+app.get("/", (req, res) => {
+  res.sendFile("index.html", { root: __dirname });
+});
 
+app.post("/api/feedback", async (req, res) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.mail.ru",
+      port: 465,
+      secure: true,
+      auth: {
+        user: "team.afk@mail.ru",
+        pass: "CdhPznjVbASd0b9hvbXL",
+      },
+    });
 
-app.get('/', (_, res) => {
-    res.sendFile(__dirname + '\\index.html')
-})
+    const { name, email } = req.body;
+    console.log("name:", name, "email:", email);
 
-
+    await transporter.sendMail({
+      from: "AFK Team site",
+      to: "team.afk@mail.ru",
+      subject: "Заявка с сайта", //Тема письма
+      text: "Вам поступила заявка с вашего сайта сайта. Скорее посмотрите!",
+      html: `
+        <h1>Заявка с сайта.</h1>
+        <br>
+        <h2>Имя клиента: ${name}</h2>
+        <h2>Почта клиента: ${email}</h2>
+        <br>
+        <p>Напишите ему как можно скорее!</p>
+        `,
+    });
+    return res.status(200).send({
+      status: 200,
+      message: "Успешная отправка!",
+    });
+  } catch (e) {
+    return res.status(500).send({
+      status: 500,
+      message: "Ошибка при запросе",
+    });
+  }
+});
 
 app.listen(port, () => {
-    console.log(`listening on port: ${port}`);
-})
+  console.log(`listening on port: ${port}`);
+});

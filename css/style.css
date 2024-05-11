@@ -24,7 +24,7 @@ body {
   position: absolute;
   z-index: -10;
   height: 100%;
-  width: auto;
+  width: 100%;
 }
 
 .bg-pic img {
@@ -615,7 +615,7 @@ header {
     font-size: 60px;
   }
   .always-block{
-    padding: ;
+    /* padding: ; */
   }
 
 }
