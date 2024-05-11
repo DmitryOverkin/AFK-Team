@@ -32,7 +32,7 @@ app.post("/api/feedback", async (req, res) => {
     console.log("name:", name, "email:", email);
 
     await transporter.sendMail({
-      from: "AFK Team site",
+      from: "team.afk@mail.ru",
       to: "team.afk@mail.ru",
       subject: "Заявка с сайта", //Тема письма
       text: "Вам поступила заявка с вашего сайта сайта. Скорее посмотрите!",
