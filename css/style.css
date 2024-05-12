@@ -450,7 +450,77 @@ header {
   height: auto;
 }
 
-/* Block Talk */
+/* ================================== Tester's block ==================================*/
+
+#testers{
+}
+
+.testers-bg{
+  position: relative;
+  width: 100%;
+  height: 840px;
+}
+
+
+.testers-bg-img{
+  position: absolute;
+  display: block;
+  background-size: cover;
+  width: 100%;
+  z-index: -3;
+}
+
+.testers-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+}
+
+/* taran */
+.taran {
+  width: 45%;
+  margin-left: 50px;
+}
+
+.taran-title {
+  font-size: 50px;
+  margin-top: 70px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+
+.taran-img {
+  width: 100%;
+}
+
+/* vasilyev */
+
+.vasilyev {
+  width: 45%;
+  justify-content: right;
+  margin-top: 100px;
+}
+
+.vasilyev-title{
+  font-size: 50px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.vasilyev-img{
+  width: 100%;
+ 
+}
+
+.testers-text{
+  padding: 20px 0 20px 0;
+}
+
+
+
+
+/*=================================== Block Talk ==============================*/
 #talk {
   padding: 150px 0;
 }
@@ -570,7 +640,6 @@ header {
 
 /* Media queries*/
 
-
 @media (max-width: 991px) {
   /* Header */
   .toggle {
@@ -581,47 +650,41 @@ header {
     display: none;
   }
 
-  .login-btn{
+  .login-btn {
     display: none;
   }
 
-  .always-login-btn{
+  .always-login-btn {
     display: block;
     padding: 15px 0;
   }
 
-  .always-block-title{
+  .always-block-title {
     font-size: 10;
   }
   /* Our Team */
-  .our-team-cards{
-   justify-content: space-evenly;
-   flex-direction: row;
-   flex-wrap: wrap;
-   width: 100%;
+  .our-team-cards {
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
-  .our-team-content{
+  .our-team-content {
     padding-top: 80px;
     padding-bottom: 30px;
   }
 }
 
-
-
 @media (max-width: 767px) {
   /* AlwayBlock */
-  .always-block-title{
+  .always-block-title {
     font-size: 60px;
   }
-  .always-block{
+  .always-block {
     /* padding: ; */
   }
-
 }
-  
 
-
-@media(max-width: 480px){
-
+@media (max-width: 480px) {
 }
