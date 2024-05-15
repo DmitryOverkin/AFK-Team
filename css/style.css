@@ -8,11 +8,13 @@
 html {
   background-color: #1a191a;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Rubik", sans-serif;
   color: #ffffff;
+  overflow-x: hidden;
 }
 #main-block {
   position: relative;
@@ -197,15 +199,24 @@ header {
 }
 
 .our-team-cards {
-  width: 925px;
-  height: 250px;
+  min-width: 100%;
+  min-height: 250px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
   margin-bottom: 100px;
   display: flex;
-  justify-content: center;
-  gap: 85px;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: auto;
+}
+
+.our-team-cards::-webkit-scrollbar {
+  display: none;
+}
+.our-team-card {
+  min-width: 250px;
+  margin: 20px;
 }
 
 .foto {
@@ -283,6 +294,7 @@ header {
 
 .sopin-content-right-side-text {
   margin-bottom: 170px;
+  min-width: 250px;
 }
 
 .right-side-text-title {
@@ -452,17 +464,13 @@ header {
 
 /* ================================== Tester's block ==================================*/
 
-#testers{
-}
-
-.testers-bg{
+.testers-bg {
   position: relative;
   width: 100%;
   height: 840px;
 }
 
-
-.testers-bg-img{
+.testers-bg-img {
   position: absolute;
   display: block;
   background-size: cover;
@@ -502,23 +510,19 @@ header {
   margin-top: 100px;
 }
 
-.vasilyev-title{
+.vasilyev-title {
   font-size: 50px;
   margin-bottom: 15px;
   text-align: center;
 }
 
-.vasilyev-img{
+.vasilyev-img {
   width: 100%;
- 
 }
 
-.testers-text{
+.testers-text {
   padding: 20px 0 20px 0;
 }
-
-
-
 
 /*=================================== Block Talk ==============================*/
 #talk {
@@ -640,6 +644,31 @@ header {
 
 /* Media queries*/
 
+@media (max-width: 1200px) {
+  .bg-dots-overkin {
+    display: none;
+  }
+
+  .bg-dots {
+    display: none;
+  }
+  .sopin-content {
+    align-items: center;
+    flex-direction: column;
+  }
+  .sopin-content-left-side {
+    margin-right: 0;
+  }
+
+  .overkin-content {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  .overkin-content-right-side {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 991px) {
   /* Header */
   .toggle {
@@ -664,10 +693,10 @@ header {
   }
   /* Our Team */
   .our-team-cards {
-    justify-content: space-evenly;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 900px;
+    overflow-x: scroll;
   }
 
   .our-team-content {
@@ -683,6 +712,14 @@ header {
   }
   .always-block {
     /* padding: ; */
+  }
+}
+
+@media (max-width: 600px) {
+  .sopin-content-right-achievements {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
