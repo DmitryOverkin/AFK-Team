@@ -57,6 +57,12 @@ app.post("/api/feedback", async (req, res) => {
   }
 });
 
+
+
+app.get('/download', (req, res) => {
+  res.download(__dirname+'/expressDownloadFiles/cv.jpg')
+})
+
 app.listen(port, () => {
   console.log(`listening on port: ${port}`);
 });
