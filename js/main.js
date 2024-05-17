@@ -1,6 +1,7 @@
 const header = document.querySelector("header");
-const FEEDBACK_FORM = document.querySelector('#talk-form')
-
+const FEEDBACK_FORM = document.querySelector("#talk-form");
+const menu = document.querySelector(".menu");
+const toggleItem = document.querySelector(".burger-menu");
 
 /* Header change background color*/
 
@@ -76,7 +77,9 @@ for (let i = 0; i < skills.length; i++) {
   let progress = setInterval(() => {
     progressStartValue++;
     progressValue.textContent = `${progressStartValue}%`;
-    circleProgress.style.background = `conic-gradient(#ff6333 ${progressStartValue * 3.6}deg, #928A97 0deg)`;
+    circleProgress.style.background = `conic-gradient(#ff6333 ${
+      progressStartValue * 3.6
+    }deg, #928A97 0deg)`;
 
     if (progressStartValue === progressEndValue) {
       clearInterval(progress);
@@ -85,7 +88,7 @@ for (let i = 0; i < skills.length; i++) {
 
   // Проверяем текущую позицию прокрутки страницы
   window.addEventListener("scroll", () => {
-    let scrollPosition = this.scrollY
+    let scrollPosition = this.scrollY;
     if (scrollPosition > 2450 && !progressStarted) {
       // Запускаем анимацию прогрессбара, если позиция прокрутки больше 2450 и прогрессбар еще не был запущен
       progressStartValue = 0;
@@ -96,7 +99,9 @@ for (let i = 0; i < skills.length; i++) {
       progress = setInterval(() => {
         progressStartValue++;
         progressValue.textContent = `${progressStartValue}%`;
-        circleProgress.style.background = `conic-gradient(#ff6333 ${progressStartValue * 3.6}deg, #928A97 0deg)`;
+        circleProgress.style.background = `conic-gradient(#ff6333 ${
+          progressStartValue * 3.6
+        }deg, #928A97 0deg)`;
 
         if (progressStartValue === progressEndValue) {
           clearInterval(progress);
@@ -107,35 +112,43 @@ for (let i = 0; i < skills.length; i++) {
   });
 }
 
-
 // Sending contacts by email
 
 function sendFeedback(feedback) {
-  fetch('/api/feedback', {
-    method: 'POST', 
+  fetch("/api/feedback", {
+    method: "POST",
     headers: {
-      "Content-Type" : "application/json"
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(feedback), 
-    mode: "cors"
-  }).then((response) => response.json()).then(data => {
-    console.log(data);
-    alert('Успешно!');
-  }).catch((error) => {
-    console.error(error);
-    alert('Ошибка'); 
+    body: JSON.stringify(feedback),
+    mode: "cors",
   })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      alert("Успешно!");
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Ошибка");
+    });
 }
 
-FEEDBACK_FORM.addEventListener('submit', (e) => {
+FEEDBACK_FORM.addEventListener("submit", (e) => {
   e.preventDefault();
   const feedbackFormData = new FormData(e.target);
-  console.log('feedbackFormData', feedbackFormData);
+  console.log("feedbackFormData", feedbackFormData);
   const feedback = Object.fromEntries(feedbackFormData);
-  console.log('feedback', feedback);
+  console.log("feedback", feedback);
 
   sendFeedback(feedback);
-})
+});
 
+// ==========Burger menu========
 
-
+// toggleItem.addEventListener("click", () => {
+//   menu.style.display = "block";
+//   menu.style.width = "100vw";
+//   menu.style.height = "100vw";
+//   menu.style.position = "absolute";
+// });
