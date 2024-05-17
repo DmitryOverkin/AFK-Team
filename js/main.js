@@ -1,7 +1,8 @@
 const header = document.querySelector("header");
 const FEEDBACK_FORM = document.querySelector("#talk-form");
-const menu = document.querySelector(".menu");
-const toggleItem = document.querySelector(".burger-menu");
+// const menu = document.querySelector(".menu");
+// const toggleItem = document.querySelector(".burger-menu");
+const getCvBtn = document.querySelectorAll(".getCvBtn");
 
 /* Header change background color*/
 
@@ -152,3 +153,33 @@ FEEDBACK_FORM.addEventListener("submit", (e) => {
 //   menu.style.height = "100vw";
 //   menu.style.position = "absolute";
 // });
+
+// =========Download Cv===============
+
+getCvBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  const url = event.currentTarget.href;
+
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        return response.text().then((text) => {
+          throw new Error(text);
+        });
+      }
+      return response.blob();
+    })
+    .then((blob) => {
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.style.display = "none";
+      a.href = downloadUrl;
+      a.download = "cv.jpg";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(downloadUrl);
+    })
+    .catch((error) => alert(`Error: ${error.message}`));
+});

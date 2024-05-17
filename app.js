@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
+const path = require("path");
 
 const app = express();
 const port = 3000;
@@ -57,11 +58,14 @@ app.post("/api/feedback", async (req, res) => {
   }
 });
 
-
-
-app.get('/download', (req, res) => {
-  res.download(__dirname+'/expressDownloadFiles/cv.jpg')
-})
+app.get("/download", (req, res) => {
+  const filePath = path.join(__dirname, "expressDownloadFiles", "cv.jpg");
+  res.download(filePath, (err) => {
+    if (err) {
+      res.status(404).send("Sorry. File not found.");
+    }
+  });
+});
 
 app.listen(port, () => {
   console.log(`listening on port: ${port}`);
