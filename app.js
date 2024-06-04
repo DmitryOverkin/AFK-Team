@@ -9,9 +9,12 @@ const port = 3000;
 app.use(express.json());
 app.use(cors());
 
+app.use(express.static('static'));
+
 app.use("/js", express.static(`${__dirname}/js`));
 app.use("/css", express.static(`${__dirname}/css`));
-app.use("/images", express.static(__dirname + "/static/images"));
+
+
 
 app.get("/", (req, res) => {
   res.sendFile("index.html", { root: __dirname });
